@@ -78,7 +78,7 @@ extern Config config;
 extern vec3_t spawn_point;
 
 
-vec3_t forward, back, left, right, up, down;
+vec3_t _forward, back, left, right, up, down;
 vec3_t down_to_ground, up_off_floor;
 
 // stacks for the floodfill recursion...
@@ -259,7 +259,7 @@ void RecursiveFloodFill(const vec3_t &coord)
       }
 
       // trace a line in the forward direction...
-      VectorAdd(origin, forward, end);
+      VectorAdd(origin, _forward, end);
       TraceLine(origin, end, &tr);
 
       // did the trace complete without hitting anything?
@@ -1075,7 +1075,7 @@ void WaypointLevel(int map_grid_size)
 
    overflow = FALSE;
 
-   forward[0] =  grid_size;  forward[1] = 0;           forward[2] = 0;
+   _forward[0] =  grid_size;  _forward[1] = 0;           _forward[2] = 0;
    back[0]    = -grid_size;  back[1]    = 0;           back[2]    = 0;
    left[0]    = 0;           left[1]    =  grid_size;  left[2]    = 0;
    right[0]   = 0;           right[1]   = -grid_size;  right[2]   = 0;
