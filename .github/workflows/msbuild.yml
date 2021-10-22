@@ -31,6 +31,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: BSP_tool
-        path: bin/BSP_Tool.exe
+        path: D:\a\BSP-Slicer\bin\*
         if-no-files-found: error
   
