@@ -31,5 +31,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: BSP_tool
-        path: D:\a\bin\*
+        path: bin\*
   
