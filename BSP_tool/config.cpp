@@ -104,9 +104,9 @@ Config::Config(char *config_file)
    strcpy(config_filename, szPath);
    strcat(config_filename, config_file);
 
-   //LoadScriptFile(config_filename);
+   LoadScriptFile(config_filename);
 
-   //ParseScriptFile();
+   ParseScriptFile();
 
    //if (valve_mod_index == -1)
       //Error("Can't find Half-Life\\valve directory!\n");
