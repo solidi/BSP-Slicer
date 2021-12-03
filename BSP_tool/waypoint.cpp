@@ -1035,7 +1035,7 @@ void CalculateWaypointPaths()
 #define USE_RANDOM_SPAWN_POINT 0
 
 
-void WaypointLevel(int map_grid_size)
+int WaypointLevel(int map_grid_size)
 {
    int table_size;
    dmodel_t *model;
@@ -1047,7 +1047,7 @@ void WaypointLevel(int map_grid_size)
    if (grid_size < 32)
    {
       printf("Error!  Waypoint grid size MUST be 32 or greater!\n");
-      return;
+      return -1;
    }
 
    array_size = (MAP_SIZE+(grid_size-1))/grid_size;
@@ -1136,7 +1136,7 @@ void WaypointLevel(int map_grid_size)
       else
       {
          printf("Error!  Can't find a spawn point: %s\n", config.spawnpoint);
-         return;
+         return -1;
       }
    }
 
@@ -1167,6 +1167,7 @@ void WaypointLevel(int map_grid_size)
    free(waypoint_loc);
 
    printf("Done!\n");
+   return 0;
 }
 
 

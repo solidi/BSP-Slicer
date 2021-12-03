@@ -41,7 +41,7 @@ Config config("BSP_tool.cfg");
 World world;
 
 
-void main (int argc, char **argv)
+int main (int argc, char **argv)
 {
    char filename[256];
    int n;
@@ -77,7 +77,7 @@ void main (int argc, char **argv)
       printf("       -ent = print entities\n");
       printf("       -wN = run autowaypoint on BSP file\n");
       printf("             (where N is the grid size: 64, 72, 80, 100, 120, 150, 200)\n");
-      return;
+      return 0;
    }
 
    for (n = 1; n < argc; n++)
@@ -144,6 +144,8 @@ void main (int argc, char **argv)
       print_entities();
 
    if (do_autowaypoint)
-      WaypointLevel(grid_size);  // auto waypoint the BSP world
+      return WaypointLevel(grid_size);  // auto waypoint the BSP world
+
+   return 0;
 }
 

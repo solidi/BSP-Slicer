@@ -90,7 +90,7 @@ void RecursiveFloodFill(const vec3_t &coord);
 void WaypointAddEntities(char *item_name, int waypoint_flags);
 void WaypointAddWallMountedEntities(char *item_name, int waypoint_flags);
 void WaypointAddLadders(int waypoint_flags);
-void WaypointLevel(int grid_size);
+int WaypointLevel(int grid_size);
 void WriteHPBWaypointFile(void);
 
 #endif
